@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumericDoc - Create Account</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h1>NumericDoc</h1>
+            <h2>Create a new account</h2>
+            <p>Or <a href="/login">sign in to your account</a></p>
+            
+            <% if (typeof error !== 'undefined') { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+            
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-Enter your password" required>
+                </div>
+                
+                <div class="form-group remember">
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree">I agree to the Terms of Service and Privacy Policy</label>
+                </div>
+                
+                <button type="submit" class="btn primary">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

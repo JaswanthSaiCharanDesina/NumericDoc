@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumericDoc - Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container dashboard">
+        <header>
+            <h1>NumericDoc</h1>
+            <div class="user-info">
+                <p style="margin-right: 50px;">Welcome <%= user.username %>!</p>
+                <a href="/logout" class="logout" style="padding: 5px 5px 5px 5px;">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <h2>Your Document numbers handbook.</h2>
+            
+            <div class="documents-display">
+                <div class="document-group">
+                    <h3>AADHAR No:</h3>
+                    <p><%= documents.aadhar || 'Not provided' %></p>
+                </div>
+                
+                <div class="document-group">
+                    <h3>Driving Licence No:</h3>
+                    <p><%= documents.drivingLicense || 'Not provided' %></p>
+                </div>
+
+                <div class="document-group">
+                    <h3>Ration Card No:</h3>
+                    <p><%= documents.rationCard || 'Not provided' %></p>
+                </div>
+
+                <div class="document-group">
+                    <h3>PAN Card No:</h3>
+                    <p><%= documents.pan || 'Not provided' %></p>
+                </div>
+
+            </div>
+            
+            <form action="/save-details" method="POST" class="documents-form">
+
+                 <div class="form-group">
+                    <label for="aadhar">AADHAR No:</label>
+                    <input type="text" id="aadhar" name="aadhar" value="<%= documents.aadhar %>">
+                </div>
+
+                 <div class="form-group">
+                    <label for="rationCard">Ration Card:</label>
+                    <input type="text" id="rationCard" name="rationCard" value="<%= documents.rationCard %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="drivingLicense">Driving Licence No:</label>
+                    <input type="text" id="drivingLicense" name="drivingLicense" value="<%= documents.drivingLicense %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="pan">PAN No:</label>
+                    <input type="text" id="pan" name="pan" value="<%= documents.pan %>">
+                </div>
+
+                <button type="submit" class="btn primary save-btn">Save Details</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

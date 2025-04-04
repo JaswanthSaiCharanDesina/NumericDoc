@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumericDoc - Sign In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h1>NumericDoc</h1>
+            <h2>Sign in to your account</h2>
+            <p>Or <a href="/signup">create a new account</a></p>
+            
+            <% if (typeof error !== 'undefined') { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+            
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                
+                <div class="form-group remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+                <button type="submit" class="btn primary">Sign in</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
