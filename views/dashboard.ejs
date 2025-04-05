@@ -11,14 +11,14 @@
         <header>
             <h1>NumericDoc</h1>
             <div class="user-info">
-                <p style="margin-right: 50px;">Welcome <%= user.username %>!</p>
-                <a href="/logout" class="logout" style="padding: 5px 5px 5px 5px;">Logout</a>
+                <p style="margin-right: 50px; font-size: 30px; color: green;">Welcome <%= user.username %>!</p>
+                <a href="/logout" class="logout" style="padding: 5px 5px 5px 5px; font-size: 20px;">Logout!</a>
             </div>
         </header>
         
         <main>
-            <h2>Your Document numbers handbook.</h2>
-            
+            <h1 style="color: rgb(9, 144, 9);">Your Document numbers handbook.</h1>
+            <h3 style="color: rgb(50, 105, 192);">Store here, see anywhere.. by just logging in..</h3><br>
             <div class="documents-display">
                 <div class="document-group">
                     <h3>AADHAR No:</h3>
@@ -46,27 +46,28 @@
 
                  <div class="form-group">
                     <label for="aadhar">AADHAR No:</label>
-                    <input type="text" id="aadhar" name="aadhar" value="<%= documents.aadhar %>">
+                    <input type="text" id="aadhar" name="aadhar" placeholder="Enter your AADHAR Number" value="<%= documents.aadhar %>">
                 </div>
 
                  <div class="form-group">
                     <label for="rationCard">Ration Card:</label>
-                    <input type="text" id="rationCard" name="rationCard" value="<%= documents.rationCard %>">
+                    <input type="text" id="rationCard" name="rationCard" placeholder="Enter your Ration Card number" value="<%= documents.rationCard %>">
                 </div>
 
                 <div class="form-group">
                     <label for="drivingLicense">Driving Licence No:</label>
-                    <input type="text" id="drivingLicense" name="drivingLicense" value="<%= documents.drivingLicense %>">
+                    <input type="text" id="drivingLicense" name="drivingLicense" placeholder="Enter your Driving Licence number" value="<%= documents.drivingLicense %>">
                 </div>
 
                 <div class="form-group">
                     <label for="pan">PAN No:</label>
-                    <input type="text" id="pan" name="pan" value="<%= documents.pan %>">
+                    <input type="text" id="pan" name="pan" placeholder="Enter your PAN(Permanent Account Number) Card number" value="<%= documents.pan %>">
                 </div>
 
                 <button type="submit" class="btn primary save-btn">Save Details</button>
             </form>
         </main>
     </div>
+    <footer>by Desina Jaswnanth Sai Charan</footer>
 </body>
 </html>
